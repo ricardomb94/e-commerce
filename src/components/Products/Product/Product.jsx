@@ -8,14 +8,18 @@ import {
   IconButton,
 } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
-// import classes from '*.module.sass';
+// import ReactImageMagnify from 'react-image-magnify';
 import useStyles from './styles';
 
 const Product = ({ product }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardMedia className={classes.media} image="" title={product.name} />
+      <CardMedia
+        className={classes.media}
+        image={product.image}
+        title={product.name}
+      />
       <CardContent>
         <div className={classes.content}>
           <Typography variant="h5" gutterBottom>
