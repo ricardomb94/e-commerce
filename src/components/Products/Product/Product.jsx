@@ -1,4 +1,5 @@
 import React from 'react';
+import stripHtml from 'string-strip-html';
 import {
   Card,
   CardMedia,
@@ -13,6 +14,7 @@ import useStyles from './styles';
 
 const Product = ({ product }) => {
   const classes = useStyles();
+  const { result } = stripHtml(product.description);
 
   return (
     <Card className={classes.root}>
@@ -26,13 +28,17 @@ const Product = ({ product }) => {
           <Typography variant="h5" gutterBottom>
             {product.name}
           </Typography>
-          <Typography variant="h5">{product.formatted_with_symbol}</Typography>
+          <Typography variant="h5">
+            {product.price.formatted_with_symbol}
+          </Typography>
         </div>
+
         <Typography
-          dangeroulysetinnerhtml={{ __html: product.description }}
+          // dangeroulySetInnerHTML={{ __html: product.description }}
           variant="body2"
-          color="textSecondary"
-        />
+          color="textSecondary">
+          {result}
+        </Typography>
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
         <IconButton aria-label="Add to Cart" />
