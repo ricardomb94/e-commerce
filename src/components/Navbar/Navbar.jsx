@@ -9,7 +9,8 @@ import {
   Typography,
 } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/media/logo.png';
+
 import useStyles from './styles';
 
 const Navbar = () => {

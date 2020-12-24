@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Slider from './slider/Slider';
 import { Products, Navbar } from './components';
 import { commerce } from './lib/commerce';
 
@@ -23,7 +23,9 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Products products={products}/>
+      <Slider products={products} />
+      <hr />
+      <Products products={products} />
     </div>
   );
 };

@@ -28,9 +28,12 @@ const Product = ({ product }) => {
           <Typography variant="h5" gutterBottom>
             {product.name}
           </Typography>
+        </div>
+        <div className={classes.price}>
           <Typography variant="h5">
             {product.price.formatted_with_symbol}
           </Typography>
+          <hr />
         </div>
 
         <Typography
